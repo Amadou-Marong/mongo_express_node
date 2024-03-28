@@ -2,8 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 
-const studentRouter = require('./Routes/students');
-app.use('/students', studentRouter);
+const studentroutes = require('./Routes/students');
+app.use('/students', studentroutes);
 
 const url = 'mongodb+srv://marongamadou6:fnfP8V0qgnqUi042@cluster0.7qy6i4u.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 mongoose.connect(url, { useNewUrlParser: true });
