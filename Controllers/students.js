@@ -35,3 +35,12 @@ const updateStudent = async (req, res) => {
 
 // Deleting a student data from the database
 
+const deleteStudent = async (req, res) => {
+    const roll = req.params.roll;
+    try {
+        await Student.findOneAndDelete({ roll: roll });
+        res.status(200).json('Student deleted successfully');
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+}
